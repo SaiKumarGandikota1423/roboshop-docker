@@ -1,7 +1,7 @@
 #https://github.com/instana/robot-shop
 networks:
   default:
-    external:
+    external: true
       name: roboshop
 volumes:
   mongodb: #docker volume create mongodb
@@ -72,6 +72,7 @@ services:
 
   shipping:
     image: shipping:v1
+    build: ./shipping
     container_name: shipping
     depends_on:
     - mysql
